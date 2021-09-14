@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    border: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body{
+    background: black;
+}
+
+.btn--container{
+    justify-content: center;
+    display: flex;
+    align-items: baseline;
+}
+.player-points{
+    color:yellow;
+}
