@@ -1,0 +1,82 @@
+*{
+  padding: 0;
+  border: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body{
+  background-color:black;
+}
+
+.content{
+  height: calc(100vh - 8rem);
+  width: 100%;
+}
+
+.game--title{
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.btn--play{
+  height: 3rem;
+  width: 10rem;
+  transition: 0.5s box-shadow;
+  cursor: pointer;
+
+  border: 2px solid var(--color-blue);
+  box-shadow: 0 0 .1rem #fff,
+  0 0 .1rem #fff,
+  0 0 1rem var(--color-purple),
+  0 0 0.7rem var(--color-purple),
+  0 0 1rem var(--color-purple),
+  inset 0 0 0.5rem var(--color-purple); 
+  background:transparent;
+  border-radius: 10px;
+  color: var(--color-purple);
+}
+
+.btn--play:hover{
+  transition: 0.5s box-shadow;
+  /* background-color: var(--color-blue); */
+  border: 2px solid var(--color-purple);
+  box-shadow: 0 0 .1rem #fff,
+  0 0 .1rem #fff,
+  0 0 1rem var(--color-blue),
+  0 0 0.7rem var(--color-blue),
+  0 0 1rem var(--color-blue),
+  inset 0 0 0.5rem var(--color-blue); 
+}
+
+.btn--play:active{
+  transition: 0s;
+  height: 2.8rem;
+  width: 9.8rem;
+}
+
+.game--title--h1{
+  color: var(--color-purple);
+  text-shadow:
+  0 0 4px #fff,
+  0 0 11px #fff,
+  0 0 19px #fff,
+  0 0 40px var(--color-purple),
+  0 0 80px var(--color-purple),
+  0 0 90px var(--color-purple),
+  0 0 100px var(--color-purple),
+  0 0 150px var(--color-purple);
+}
+
+/* variables */
+:root{
+  --color-purple: purple;
+  --color-blue: rgb(0, 132, 255);
+}
