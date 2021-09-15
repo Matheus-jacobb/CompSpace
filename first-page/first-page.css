@@ -74,9 +74,3 @@ footer{
   0 0 100px var(--color-purple),
   0 0 150px var(--color-purple);
 }
-
-/* variables */
-:root{
-  --color-purple: purple;
-  --color-blue: rgb(0, 132, 255);
-}
