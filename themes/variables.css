@@ -2,4 +2,10 @@
 :root{
   --color-purple: purple;
   --color-blue: rgb(0, 132, 255);
+  --cursor-pointer: url('../assets/pointer/pointer.cur');
+  --cursor-auto: url('../assets/pointer/auto.cur');
+}
+
+*{
+  font-family: 'Press Start 2P', cursive;
 }

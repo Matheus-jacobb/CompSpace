@@ -1,7 +1,7 @@
 *{
   padding: 0;
   border: 0;
-  font-family: 'Press Start 2P', cursive;
+  cursor: var(--cursor-auto), auto;
 }
 
 body{
@@ -19,6 +19,33 @@ body{
   height: 2rem;
 }
 
+.game--title--h1{
+  transition: 3s;
+  color: var(--color-purple);
+  text-shadow:
+  0 0 4px #fff,
+  0 0 11px #fff,
+  0 0 19px #fff,
+  0 0 40px var(--color-purple),
+  0 0 80px var(--color-purple),
+  0 0 90px var(--color-purple),
+  0 0 100px var(--color-purple),
+  0 0 150px var(--color-purple);
+}
+
+.game--title--h1:hover{
+  transition: 3s;
+  text-shadow:
+  0 0 4px #fff,
+  0 0 11px #fff,
+  0 0 19px #fff,
+  0 0 40px var(--color-blue),
+  0 0 80px var(--color-blue),
+  0 0 90px var(--color-blue),
+  0 0 100px var(--color-blue),
+  0 0 150px var(--color-blue);
+}
+
 footer{
   display: flex;
   justify-content: center;
@@ -29,8 +56,9 @@ footer{
 .btn--play{
   height: 3rem;
   width: 10rem;
-  transition: 0.5s box-shadow;
-  cursor: pointer;
+  transition: 0.5s box-shadow, 0.2s font-size;
+  cursor: var(--cursor-pointer), pointer;
+  font-size: 0.8rem;
 
   border: 2px solid var(--color-blue);
   box-shadow: 0 0 .1rem #fff,
@@ -45,9 +73,10 @@ footer{
 }
 
 .btn--play:hover{
-  transition: 0.5s box-shadow;
+  transition: 0.5s box-shadow, 0.2s font-size;
   /* background-color: var(--color-blue); */
   border: 2px solid var(--color-purple);
+  font-size: 0.9rem;
   box-shadow: 0 0 .1rem #fff,
   0 0 .1rem #fff,
   0 0 1rem var(--color-blue),
@@ -60,17 +89,4 @@ footer{
   transition: 0s;
   height: 2.8rem;
   width: 9.8rem;
-}
-
-.game--title--h1{
-  color: var(--color-purple);
-  text-shadow:
-  0 0 4px #fff,
-  0 0 11px #fff,
-  0 0 19px #fff,
-  0 0 40px var(--color-purple),
-  0 0 80px var(--color-purple),
-  0 0 90px var(--color-purple),
-  0 0 100px var(--color-purple),
-  0 0 150px var(--color-purple);
 }
