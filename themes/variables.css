@@ -1,6 +1,8 @@
 /* variables */
 :root{
   --color-purple: purple;
+  --color-purple-light: rgb(224, 0, 224);
+  
   --color-blue: rgb(0, 132, 255);
   --cursor-pointer: url('../assets/pointer/pointer.cur');
   --cursor-auto: url('../assets/pointer/auto.cur');
