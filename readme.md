@@ -42,7 +42,6 @@ After cloning the project, just run the index.html file.
 And it's working on your machine!🚀🚀
 
 <br>
-<br>
 
 ---
 ## Developed by ⚙
