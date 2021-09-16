@@ -1,6 +1,6 @@
 # Group CompSpace (PA VI)
 
-## 📃 **Sobre**
+## 📃 **About**
 
 &nbsp;&nbsp;&nbsp;&nbsp;The project presented for this discipline will be based on a web application developed in **JavaScript** , **HTML** and **CSS**, and using **socket-io** for the server-client connection. The project will be a retro game in a Shoot’em up and **Fixed Shooter style**, with the controlled ship’s movement only possible in the Y axis, similar to the games of the same style on the SNES console.
 <br>
