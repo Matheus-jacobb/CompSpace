@@ -102,35 +102,12 @@ footer{
   width: 9.8rem;
 }
 
-#welcome {
-  width: 50%;
-}
-
-#welcome p{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: #FFF;
-  text-align: center;
-  font-size: 0.7em;
-  padding-left: 10px;
-  line-height: 30px;
-  animation: fadein 5s;
-}
-
-
 /* animation */
 @keyframes zoom-out{
-  0%{
-    transform: scale(8,8);
-  }
-  100%{
-    transform: scale(1,1);
-  }
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+ 0%{
+  transform: scale(8,8);
+ }
+ 100%{
+  transform: scale(1,1);
+ }
 }
