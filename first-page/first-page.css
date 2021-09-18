@@ -119,6 +119,16 @@ footer{
   animation: fadein 5s;
 }
 
+#spaceship{
+  position: absolute;
+  transform: rotate(
+    90deg);
+        top: 45%;
+        left: 5rem;
+        height: 8rem;
+  animation: flying 5s;
+}
+
 
 /* animation */
 @keyframes zoom-out{
@@ -133,4 +143,13 @@ footer{
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+@keyframes flying {
+  from {transform: rotate(
+    90deg) translateY(-30vw)
+    scale(0.2);}
+  to {transform: rotate(
+    90deg) translateY(0vw)
+    scale(1);}
 }
