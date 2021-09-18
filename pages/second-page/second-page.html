@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="../../themes/variables.css">
+  <link rel="stylesheet" href="../../parallax/parallax.css">
+  
+  <script defer src="second-page.js"></script>
+  <link rel="icon" href="../../assets/img/rocket.gif">
+  <title>CompSpace</title>
 </head>
 <body>
   <div class="game">
@@ -16,8 +21,14 @@
     </div>
     <footer>
       <div class="btn--container">
-        <div class = "player-points">
-            0TESTE
+        <div class="game">
+          <div id='stars'></div>
+          <div id='stars2'></div>
+          <div id='stars3'></div>
+          </div>
+        <canvas id="snake" width="1024" height="1024"></canvas>
+        <div class = "player-points" id="score">
+          <p id="score">0</p>
         </div>
       </div>
     </footer>

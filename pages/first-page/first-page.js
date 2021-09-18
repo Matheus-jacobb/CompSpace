@@ -1,3 +1,5 @@
+
+// go to second page and make animations
 function playGame(){
   var spaceship = document.getElementById('spaceship');
   var title = document.getElementById('welcome')
@@ -15,6 +17,6 @@ function playGame(){
     {opacity: '1'},
     {opacity: '0'},
   ],1500);
-  
-  setTimeout(()=>window.location.href = "../second-page/index.html",1750)
+
+  setTimeout(()=>window.location.href = "../second-page/second-page.html",1550)
 }
