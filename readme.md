@@ -37,7 +37,7 @@ First you need to clone the repository on your machine using the command below i
 
 <br>
 
-After cloning the project, just run the index.html file.
+After cloning the project, just run the first-page.html file with a web browser of your choice.
 
 And it's working on your machine!🚀🚀
 
