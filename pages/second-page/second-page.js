@@ -35,6 +35,11 @@ function drawobstacle(){
 
 //Mapear as teclas do teclado{
 document.addEventListener('keydown', update);
+document.addEventListener('keyup', stop);
+
+function stop (event){
+    direction = "right";
+}
 
 function update (event){
     if(event.keyCode == 38) direction = "up";
