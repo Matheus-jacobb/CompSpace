@@ -24,6 +24,7 @@ function createBG() {
 function createspShip(){
     for(i=0; i < spShip.length; i++){
         context.fillStyle = "purple";
+        context.clearRect(0, 0, canvas.width, canvas.height);
         context.fillRect(spShip[i].x, spShip[i].y, box, box);
     }
 }
@@ -59,7 +60,7 @@ function startGame(){
             alert('Game Over !');
         }
     }
-    createBG();
+    // createBG();
     createspShip();
     drawobstacle();
 
