@@ -16,11 +16,6 @@ let obstacle = {
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
-function createBG() {
-    context.fillStyle = ("black");
-    context.fillRect(0, 0, 32 * box, 32 * box);
-}
-
 function createspShip(){
     for(i=0; i < spShip.length; i++){
         context.fillStyle = "purple";
@@ -46,7 +41,7 @@ function update (event){
     if(event.keyCode == 38) direction = "up";
     if(event.keyCode == 40) direction = "down";
 }
-//} Fim mapeamento
+// Fim mapeamento
 
 function startGame(){
     if(spShip[0].x > 15 * box && direction == "right") spShip[0].x = 0;
@@ -60,7 +55,6 @@ function startGame(){
             alert('Game Over !');
         }
     }
-    // createBG();
     createspShip();
     drawobstacle();
 
