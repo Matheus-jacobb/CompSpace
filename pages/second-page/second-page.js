@@ -44,10 +44,10 @@ function update (event){
 // Fim mapeamento
 
 function startGame(){
-    if(spShip[0].x > 15 * box && direction == "right") spShip[0].x = 0;
-    if(spShip[0].x < 0 && direction == "left") spShip[0].x = 16 * box;
-    if(spShip[0].y > 15 * box && direction == "down") spShip[0].y =0;
-    if(spShip[0].y < 0 && direction == "up") spShip[0].y = 16 * box;
+    // if(spShip[0].x > 15 * box && direction == "right") spShip[0].x = 0;
+    // if(spShip[0].x < 0 && direction == "left") spShip[0].x = 16 * box;
+    if(spShip[0].y == 15 * box) spShip[0].y = 14 * box;
+    if(spShip[0].y == 0) spShip[0].y = 1 * box;
 
     for (i = 1; i < spShip.length; i++){
         if (spShip[0].x == spShip[i].x && spShip[0].y == spShip[i].y){

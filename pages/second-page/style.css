@@ -1,28 +1,54 @@
 *{
+    margin: 0;
     padding: 0;
     border: 0;
     font-family: 'Press Start 2P', cursive;
 }
 
 body{
-    background: black;
+    /* background: black; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: rgb(19, 19, 19); */
+    color: purple;
 }
 
 .btn--container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
     justify-content: center;
     display: flex;
     align-items: baseline;
 }
-.player-points{
-    color:yellow;
+
+.btn--container nav{
+    z-index: 1;
+    height: 5%;
 }
-body{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background-color: rgb(19, 19, 19);
-color: purple;
+
+.btn--container nav a:hover{
+    transition: 0.5s;
+    filter: brightness(120%);
+    border-radius: 100%;
+    box-shadow:
+    0 0 5px var(--color-purple),
+    0 0 7px var(--color-purple),
+    0 0 10px var(--color-purple),
+    0 0 12px var(--color-purple),
+    0 0 15px var(--color-purple)
+}
+
+#home-page-icon{
+    margin-top: 20%;
+    height: 80%;
+}
+
+.player-points{
+    position:absolute;
+    bottom:0;
+    color:yellow;
 }
 
 .content{
@@ -30,8 +56,13 @@ color: purple;
     width: 100%;
     z-index: 0;
     position: fixed;
-  }
+}
 
-  canvas{
-      position: absolute;
-  }
+canvas{
+    position: absolute;
+}
+
+#spShip{
+    width: 100vw;
+    height: 100vh;
+}
