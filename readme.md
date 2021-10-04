@@ -48,7 +48,7 @@ And it's working on your machine!🚀🚀
 
 - **<h3> Antonio Canno de Araujo <h3>**
 - **<h3> Gustavo Hideo Takao <h3>**
-- **<h3> Guilherme Koji Yamad <h3>**
+- **<h3> Guilherme Koji Yamada <h3>**
 - **<h3> Leonardo da Costa Campagnollo <h3>**
 - **<h3> Lucas de Abreu Furtado Garcia <h3>**
 
