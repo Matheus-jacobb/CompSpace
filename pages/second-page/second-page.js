@@ -6,6 +6,13 @@ let canvas = document.getElementById("spShip");
 let context = canvas.getContext("2d");
 let box = 64;
 let spShip = [];
+
+var shipImg = new Image();
+shipImg.src = "../../assets/img/rocket-direita.gif";
+
+var meteorImg = new Image();
+meteorImg.src = "../../assets/img/meteoro.png";
+
 spShip[0] = {
     x: box,
     y: box
@@ -18,15 +25,17 @@ let obstacle = {
 
 function createspShip(){
     for(i=0; i < spShip.length; i++){
-        context.fillStyle = "purple";
+        context.fillStyle = "rgba(0,0,0,0)";
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.fillRect(spShip[i].x, spShip[i].y, box, box);
+        context.drawImage(shipImg, spShip[i].x, spShip[i].y, box+30 , box);
     }
 }
 
 function drawobstacle(){
-    context.fillStyle = "red";
+    context.fillStyle = "rgba(0,0,0,0)";
     context.fillRect(obstacle.x, obstacle.y, box, box);
+    context.drawImage(meteorImg, obstacle.x, obstacle.y, box+30 , box);
 }
 
 //Mapear as teclas do teclado{
