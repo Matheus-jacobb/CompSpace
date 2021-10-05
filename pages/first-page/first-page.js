@@ -18,5 +18,5 @@ function playGame(){
     {opacity: '0'},
   ],1500);
 
-  setTimeout(()=>window.location.href = "../second-page/second-page.html",1550)
+  setTimeout(()=>window.location.href = "../second-page/second-page.html",1200)
 }
