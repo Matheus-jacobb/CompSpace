@@ -117,6 +117,7 @@ footer{
   line-height: 30px;
   animation: fadein 5s;
   margin: 0 100px 0 100px;
+  -webkit-transform:scale(1,1.5); /* Safari and Chrome */
 }
 
 #spaceship{
@@ -151,4 +152,17 @@ footer{
   to {transform: rotate(
     90deg) translateY(0vw)
     scale(1);}
+}
+
+@media screen and (max-width:800px){
+  #spaceship{
+    top: 15%;
+  }
+}
+
+@media screen and (max-width:420px){
+  #welcome p{
+    font-size: 0.5em;
+    margin: 0 20px 0 20px;
+  }
 }
