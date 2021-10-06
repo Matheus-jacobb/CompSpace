@@ -14,7 +14,7 @@
   <title>CompSpace</title>
 </head>
 <body>
-  <div class="game">
+  <div class="game" id="game">
     <div class="game--title">
     </div>
     <div class="content">
@@ -37,4 +37,16 @@
     </footer>
   </div>
 </body>
+
+<!--Modal-->
+<div id="modal">
+  <div class="modal--title">
+    <strong id="finalScore"></strong>
+  </div>
+  <div class="modal--confirmation">
+    <button>
+      <p id="modalButton" onclick="window.location.reload()">Continuar</p>
+    </button>
+  </div>
+</div>
 </html>

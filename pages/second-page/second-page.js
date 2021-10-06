@@ -1,9 +1,9 @@
-window.onload = function(){
-  }
-
   let pontos = 0;
   let canvas = document.getElementById("spShip");
   let context = canvas.getContext("2d");
+  let finalScore = document.getElementById("finalScore");
+  let modal = document.getElementById("modal");
+  let gameCanvas = document.getElementById("game");
   let box = 64;
   let spShip = [];
   let obstacle = [];
@@ -26,6 +26,17 @@ window.onload = function(){
         x: Math.floor(Math.random() * 15 + 1) * box,
         y: Math.floor(Math.random() * 15 + 1) * box
     }
+}
+
+window.onload = function(){
+    modal.style.transform = 'scale(0)';
+}
+
+function showModal(){
+    modal.style.transition = '0.5s'
+    modal.style.transform= 'scale(1)';
+    gameCanvas.style.filter = 'blur(1.2px)';
+    
 }
   
 function updateScore(){
@@ -93,9 +104,6 @@ function updateScore(){
       createspShip();
       updateScore();
       drawObstacles();
-      
-      
-      
 
 
       //inicializar cobrinha em 0x0
@@ -119,7 +127,9 @@ function updateScore(){
        (spShipX >= obstacle[3].x - margin && spShipX <= obstacle[3].x + margin ) && (spShipY >= obstacle[3].y - margin && spShipY <= obstacle[3].y + margin ) ||
        (spShipX >= obstacle[4].x - margin && spShipX <= obstacle[4].x + margin ) && (spShipY >= obstacle[4].y - margin && spShipY <= obstacle[4].y + margin )){
         //spShip.pop();
-        alert('game over');
+        clearInterval(game);
+        finalScore.innerHTML = `${pontos}`;
+        showModal();
     }
 
   
