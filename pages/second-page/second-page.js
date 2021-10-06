@@ -81,6 +81,8 @@ window.onload = function(){
       let spShipX = spShip[0].x;
       let spShipY = spShip[0].y;
   
+      const margin = 20;
+
       //andar com a cobrinha (box = pixel)
       if(direction == "down") spShipY += box;
       if(direction == "up") spShipY -= box;
@@ -89,10 +91,14 @@ window.onload = function(){
       if(spShipX != obstacle.x || spShipY != obstacle.y){
           spShip.pop();
       }
-      else{
-          obstacle.x = Math.floor(Math.random() * 15 + 1) * box;
-          obstacle.y = Math.floor(Math.random() * 15 + 1) * box;
+      if((spShipX >= obstacle.x - margin && spShipX <= obstacle.x + margin ) && (spShipY >= obstacle.y - margin && spShipY <= obstacle.y + margin )){
+        //spShip.pop();
+        alert('game over');
       }
+    //   else{
+    //       obstacle.x = Math.floor(Math.random() * 15 + 1) * box;
+    //       obstacle.y = Math.floor(Math.random() * 15 + 1) * box;
+    //   }
   
       let newHead = {
           x: spShipX,
