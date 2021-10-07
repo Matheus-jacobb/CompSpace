@@ -7,6 +7,7 @@
   let box = 64;
   let spShip = [];
   let obstacle = [];
+  const  marginX = 2100;
 
   var shipImg = new Image();
   shipImg.src = "../../assets/img/rocket-direita.gif";
@@ -21,9 +22,10 @@
 
   let direction = "right";
 
+  //Inicializer firsts obstacles
   for(let i = 0; i < 5; i++){
     obstacle[i] = {
-        x: Math.floor(Math.random() * 15 + 1) * box,
+        x: Math.floor(Math.random() * 15 + 1) * box + marginX*1.5,
         y: Math.floor(Math.random() * 15 + 1) * box
     }
 }
@@ -66,7 +68,6 @@ function updateScore(){
   }
   
    function moveObstacles(){
-      let  marginX = 2100;
       for(let i = 0; i < obstacle.length; i++){
         obstacle[i].x -= 20;
         if(obstacle[i].x < box)
