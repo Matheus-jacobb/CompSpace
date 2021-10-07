@@ -102,22 +102,22 @@ function updateScore(){
       let spShipX = spShip[0].x;
       let spShipY = spShip[0].y;
   
-      const margin = 20;
+      const margin = 40;
 
       //andar com a cobrinha (box = pixel)
-      if(direction == "down") spShipY += box;
-      if(direction == "up") spShipY -= box;
+      if(direction == "down") spShipY += 32;
+      if(direction == "up") spShipY -= 32;
       
 
       if((spShipX != obstacle[0].x || spShipY != obstacle[0].y)){
           spShip.pop();
       }
       
-    if((spShipX >= obstacle[0].x - margin && spShipX <= obstacle[0].x + margin ) && (spShipY >= obstacle[0].y - margin && spShipY <= obstacle[0].y + margin ) ||
-       (spShipX >= obstacle[1].x - margin && spShipX <= obstacle[1].x + margin ) && (spShipY >= obstacle[1].y - margin && spShipY <= obstacle[1].y + margin ) ||
-       (spShipX >= obstacle[2].x - margin && spShipX <= obstacle[2].x + margin ) && (spShipY >= obstacle[2].y - margin && spShipY <= obstacle[2].y + margin ) ||
-       (spShipX >= obstacle[3].x - margin && spShipX <= obstacle[3].x + margin ) && (spShipY >= obstacle[3].y - margin && spShipY <= obstacle[3].y + margin ) ||
-       (spShipX >= obstacle[4].x - margin && spShipX <= obstacle[4].x + margin ) && (spShipY >= obstacle[4].y - margin && spShipY <= obstacle[4].y + margin )){
+    if((spShipX >= obstacle[0].x - margin && spShipX <= obstacle[0].x + margin) && (spShipY >= obstacle[0].y - margin && spShipY <= obstacle[0].y + margin) ||
+       (spShipX >= obstacle[1].x - margin && spShipX <= obstacle[1].x + margin) && (spShipY >= obstacle[1].y - margin && spShipY <= obstacle[1].y + margin) ||
+       (spShipX >= obstacle[2].x - margin && spShipX <= obstacle[2].x + margin) && (spShipY >= obstacle[2].y - margin && spShipY <= obstacle[2].y + margin) ||
+       (spShipX >= obstacle[3].x - margin && spShipX <= obstacle[3].x + margin) && (spShipY >= obstacle[3].y - margin && spShipY <= obstacle[3].y + margin) ||
+       (spShipX >= obstacle[4].x - margin && spShipX <= obstacle[4].x + margin) && (spShipY >= obstacle[4].y - margin && spShipY <= obstacle[4].y + margin )){
         //spShip.pop();
         alert('game over');
     }
