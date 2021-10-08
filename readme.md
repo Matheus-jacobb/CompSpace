@@ -46,11 +46,16 @@ And it's working on your machine!🚀🚀
 ---
 ## Developed by ⚙
 
-- **<h3> Antonio Luis Canno de Araujo <h3>**
-- **<h3> Gustavo Hideo Takao <h3>**
-- **<h3> Guilherme Koji Yamada <h3>**
-- **<h3> Leonardo da Costa Campagnollo <h3>**
-- **<h3> Lucas de Abreu Furtado Garcia <h3>**
+| Author | Description |
+| :---: | :--- |
+| <img src="https://avatars.githubusercontent.com/u/70240646?v=4" width="170"> | **Matheus Jacob Bendel (https://github.com/Matheus-jacobb)**<br> Developer/Student.<br> ||
+<img src="https://avatars.githubusercontent.com/u/69996623?v=4" width="170"> | **Antonio Luis Canno de Araujo (https://github.com/tonicocanno)**<br> Developer/Student.<br> ||
+<img src="https://avatars.githubusercontent.com/u/69652926?v=4" width="170"> | **Gustavo Hideo Takao (https://github.com/takaozando)**<br> Developer/Student.<br> ||
+<img src="https://avatars.githubusercontent.com/u/70176420?v=4" width="170"> | **Guilherme Koji Yamada (https://github.com/gkojiyamada)**<br> Developer/Student.<br> ||
+<img src="https://avatars.githubusercontent.com/u/36682861?v=4" width="170"> | **Leonardo da Costa Campagnollo (https://github.com/Leo21212)**<br> Developer/Student.<br> ||
+<img src="https://avatars.githubusercontent.com/u/52716819?v=4" width="170"> | **Lucas de Abreu Furtado Garcia (https://github.com/Jornay)**<br> Developer/Student.<br> ||
+## Professor 📖🖊
 
-- **<h3> Matheus Jacob Bendel <h3>**
-
+|       | Description |
+| :---: | :--- |
+<img src="https://media-exp1.licdn.com/dms/image/C5603AQFzSK9NUdn5Og/profile-displayphoto-shrink_800_800/0/1610644717696?e=1639008000&v=beta&t=zELDDATphEtRbIAFjnrTBPlCdx9m2VcXd8gaRtsh7mM" width="170"> | **Mentor (https://www.linkedin.com/in/marcgonzalezcapdevila/)**<br> Master.<br> ||
