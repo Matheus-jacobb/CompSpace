@@ -26,7 +26,9 @@ The project was developed using the following technologies:
 
 ## **How to test the project** 🔧
 
-To reproduce what the project has to offer, it is necessary that your machine is installed:
+To reproduce what the project has to offer, you can [download zip file](https://github.com/Matheus-jacobb/CompSpace/archive/refs/heads/develop.zip) or use git to clone this repository.
+
+To clone this repository, it is necessary that your machine is installed:
 
 - [Git](https://git-scm.com/downloads)&nbsp;( 
 To clone the repository )
@@ -37,7 +39,7 @@ First you need to clone the repository on your machine using the command below i
 
 <br>
 
-After cloning the project, just run the first-page.html file with a web browser of your choice.
+After cloned/downloaded the project, you can just open 'first-page.html' file with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 And it's working on your machine!🚀🚀
 
