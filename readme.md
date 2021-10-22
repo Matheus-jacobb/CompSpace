@@ -39,7 +39,7 @@ First you need to clone the repository on your machine using the command below i
 
 <br>
 
-After cloned/downloaded the project, you can just open 'first-page.html' file with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+After cloned/downloaded the project, you can just open 'first-page.html' file located on 'pages' folder with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 And it's working on your machine!🚀🚀
 
