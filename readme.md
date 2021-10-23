@@ -26,9 +26,14 @@ The project was developed using the following technologies:
 
 ## **How to test the project** 🔧
 
-To reproduce what the project has to offer, you can [download zip file](https://github.com/Matheus-jacobb/CompSpace/archive/refs/heads/develop.zip) or use git to clone this repository.
+### **Step 1**
 
-To clone this repository, it is necessary that your machine is installed:
+1.1 Reproduce what the project has to offer, you can download zip file [here](https://github.com/Matheus-jacobb/CompSpace/archive/refs/heads/develop.zip) or 
+on the project's central [page](https://github.com/Matheus-jacobb/CompSpace).
+
+or
+
+1.2 To clone this repository, it is necessary that your machine is installed:
 
 - [Git](https://git-scm.com/downloads)&nbsp;( 
 To clone the repository )
@@ -39,7 +44,11 @@ First you need to clone the repository on your machine using the command below i
 
 <br>
 
-After cloned/downloaded the project, you can just open 'first-page.html' file located on 'CompSpace-develop\pages\first-page' folder with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+---
+
+### **Step 2**
+
+2. After cloned/downloaded the project, you can just open 'first-page.html' file located on 'CompSpace-develop\pages\first-page' folder with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 And it's working on your machine!🚀🚀
 
