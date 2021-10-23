@@ -69,4 +69,4 @@ And it's working on your machine!🚀🚀
 
 |       | Description |
 | :---: | :--- |
-<img src="https://media-exp1.licdn.com/dms/image/C5603AQFzSK9NUdn5Og/profile-displayphoto-shrink_800_800/0/1610644717696?e=1639008000&v=beta&t=zELDDATphEtRbIAFjnrTBPlCdx9m2VcXd8gaRtsh7mM" width="170"> | **Mentor (https://www.linkedin.com/in/marcgonzalezcapdevila/)**<br> Master.<br> ||
+<img src="https://media-exp1.licdn.com/dms/image/C5603AQFzSK9NUdn5Og/profile-displayphoto-shrink_800_800/0/1610644717696?e=1639008000&v=beta&t=zELDDATphEtRbIAFjnrTBPlCdx9m2VcXd8gaRtsh7mM" width="170"> | **Marc Gonzalez Capdevila (https://www.linkedin.com/in/marcgonzalezcapdevila/)**<br> Mentor.<br> ||
