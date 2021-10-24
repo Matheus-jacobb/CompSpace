@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    border: 0;
+    cursor: var(--cursor-auto), auto;
+  }
+  
+  body{
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  }
+  
+  .content{
+    height: calc(100vh - 8rem);
+    width: 100%;
+    z-index: 0;
+  }
+
+  
+  .game--title--h1:hover{
+    transition: 3s;
+    text-shadow:
+    0 0 6px #fff,
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 10px var(--color-blue),
+    0 0 15px var(--color-blue),
+    0 0 20px var(--color-blue),
+    0 0 25px var(--color-blue),
+    0 0 30px var(--color-blue)
+  }
+  
+  footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+  }
+  
+  .btn--container{
+    position: relative;
+    width: 10rem;
+    height: 3rem;
+  }
+  
+  .btn--play{
+    position: absolute;
+    height: 3rem;
+    width: 10rem;
+    transition: 0.5s box-shadow, 0.2s font-size;;
+    cursor: var(--cursor-pointer), pointer;
+    font-size: 0.8rem;
+  
+    border: 2px solid var(--color-blue);
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem var(--color-purple),
+    0 0 0.7rem var(--color-purple),
+    0 0 1rem var(--color-purple),
+    inset 0 0 0.5rem var(--color-purple); 
+    background:#141e2c;
+    border-radius: 10px;
+    color: var(--color-purple-light);
+    z-index: 1;
+  }
+  
+  .btn--play:hover{
+    transition: 0.5s box-shadow, 0.2s font-size;
+    /* background-color: var(--color-blue); */
+    border: 2px solid var(--color-purple);
+    font-size: 0.9rem;
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem var(--color-blue),
+    0 0 0.7rem var(--color-blue),
+    0 0 1rem var(--color-blue),
+    inset 0 0 0.5rem var(--color-blue); 
+  }
+  
+  .btn--play:active{
+    transition: 0s;
+    height: 2.8rem;
+    width: 9.8rem;
+  }
+  
+  #newChallenge{
+    position: absolute;
+    width: 100%;
+    top: 75%;
+    cursor: pointer;
+  }
+  
+  #newChallenge p{
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 30px;
+    animation: fadein 5s;
+    margin: 0 100px 0 100px;
+    -webkit-transform:scale(1,1.5); /* Safari and Chrome */
+    cursor: pointer;
+
+  }
+  
+  #spaceship{
+    position: absolute;
+    transform: rotate(90deg);
+    top: 74%;
+    left: 45%;
+    height: 15rem;
+    animation: flying 5s;
+  }
+
+  #scoreContent{
+    position: absolute;
+    top: 30%;
+    right: 38%;
+    text-align: center;
+    color: yellow;
+    font-size: 1.5em;
+    background: black;
+    padding: 1em 2em;
+    border-left: 0.8em solid #C1C1C1;
+    border-bottom: 0.8em solid #C1C1C1;
+  }
+
+
+  #welcome{
+    position: absolute;
+    width: 100%;
+    top: 20%;
+  }
+  
+  #welcome p{
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 30px;
+    animation: fadein 5s;
+    margin: 0 100px 0 100px;
+    -webkit-transform:scale(1,1.5); /* Safari and Chrome */
+  }
+
+  /* animation */
+  @keyframes zoom-out{
+    0%{
+      transform: scale(8,8);
+    }
+    100%{
+      transform: scale(1,1);
+    }
+  }
+  
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes flying {
+    from {transform: rotate(
+      90deg) translateY(-30vw)
+      scale(0.2);}
+    to {transform: rotate(
+      90deg) translateY(0vw)
+      scale(1);}
+  }
+  
+  @media screen and (max-width:800px){
+    #spaceship{
+      top: 15%;
+    }
+  }
+  
+  @media screen and (max-width:420px){
+    #newChallenge p{
+      font-size: 0.5em;
+      margin: 0 20px 0 20px;
+    }
+  }
+
+@media screen and (max-width:420px){
+    #welcome p{
+      font-size: 0.5em;
+      margin: 0 20px 0 20px;
+    }
+  }
