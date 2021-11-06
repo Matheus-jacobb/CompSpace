@@ -19,6 +19,8 @@ let running = false
  */
 let finalScore = document.getElementById("finalScore");
 
+let continua = document.getElementById("finalButton")
+
 /**
  * A modal de pontos
  */
@@ -245,6 +247,7 @@ function startGame() {
             score.pause()
             running = false;
             finalScore.innerHTML = `${pontos}`;
+            continua.innerHTML = `<p id="scoreVencedor" onclick = "window.location.href = '../third-page/third-page.html?score=${pontos}'">Score Vencedor</p>`
             showModal();
         }
     }
