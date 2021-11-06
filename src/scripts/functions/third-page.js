@@ -18,4 +18,7 @@ function queryString(parameter) {
 
 let scorePoint = document.getElementById("scorePoints")
 
+if(scorePoint === undefined)
+    console.log("erro na coleta de score do jogador")
+
 scorePoints.innerHTML = queryString("score");
