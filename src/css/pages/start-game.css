@@ -1,7 +1,7 @@
 *{
   padding: 0;
   border: 0;
-  cursor: var(--cursor-auto), auto;
+  /*cursor: var(--cursor-auto), auto;*/
 }
 
 body{
@@ -67,7 +67,7 @@ footer{
   height: 3rem;
   width: 10rem;
   transition: 0.5s box-shadow, 0.2s font-size;;
-  cursor: var(--cursor-pointer), pointer;
+  /*cursor: var(--cursor-pointer), pointer;*/
   font-size: 0.8rem;
 
   border: 2px solid var(--color-blue);

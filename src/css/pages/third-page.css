@@ -1,7 +1,7 @@
 *{
     padding: 0;
     border: 0;
-    cursor: var(--cursor-auto), auto;
+    /*cursor: var(--cursor-auto), auto;*/
   }
   
   body{
