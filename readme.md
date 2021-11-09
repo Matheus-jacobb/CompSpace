@@ -48,7 +48,7 @@ First you need to clone the repository on your machine using the command below i
 
 ### **Step 2**
 
-2. After cloned/downloaded the project, you can just open 'first-page.html' file located on 'CompSpace-develop\pages\first-page' folder with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+2. After cloned/downloaded the project, you can just open 'start-game.html' file located on 'CompSpace-develop\src\pages\StartGame\start-game.html' folder with a web browser of your choice or use [Visual Studio Code](https://code.visualstudio.com/) with [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 And it's working on your machine!🚀🚀
 
