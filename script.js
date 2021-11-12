@@ -1,3 +1,3 @@
 window.onload = function () {
-  setTimeout(()=>window.location.href = "src/pages/StartGame/start-game.html",2000)
+  setTimeout(()=>window.location.href = "/StartGame",2000)
 }

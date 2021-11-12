@@ -32,14 +32,68 @@
       </div>
       <img id="spaceship" src="../../assets/img/rocket.gif" alt="">
     </div>
+    <div class="rooms--party">
+      <ul id="lista"></ul>
+      <input type="button" class="btn-rooms btn-primary" onclick="showRooms()" value="Salas">
+      <input type="button" class="btn-rooms btn-primary" onclick="clearRooms()" value="Apagar">
+    </div>
     <footer>
-      <div class="btn--container">
-        <button class="btn--play" onclick="playGame()">
-          Play Game
-        </button>
+      <div class="play--container">
+        <form id="form" action="">
+          <input type="text" id="username-input" class="input--username btn-primary" placeholder="Nome"
+            autocomplete="off" maxlength="10">
+          <button class="btn--play btn-primary">
+            Jogar
+          </button>
+        </form>
       </div>
     </footer>
   </div>
+  <!-- Alterar para arquivo separado -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    var form = document.getElementById('form');
+    var input = document.getElementById('username-input');
+    var username;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value) {
+        username = input.value;
+        input.value = '';
+      } else {
+        username = `convidado_${Math.random().toString(36).substr(2, 9)}`;
+      }
+      socket.emit('create room', username);
+      if (localStorage.getItem('rooms')) {
+        let rooms = []
+        rooms.push(localStorage.getItem('rooms'));
+        rooms.push(username);
+        localStorage.setItem('rooms', rooms);
+      }else{
+        localStorage.setItem('rooms', username);
+      }
+      window.location.href = '/GameRunning'
+    });
+
+    function showRooms() {
+      let rooms = []
+      rooms.push(localStorage.getItem('rooms'));
+      let roomsList = rooms[0].split(',');
+      let lista = document.getElementById('lista');
+      for (var i = 0; i < roomsList.length; i++) {
+        let item = document.createElement('li');
+        item.appendChild(document.createTextNode(roomsList[i]));
+        lista.appendChild(item);
+      }
+    }
+
+    function clearRooms(){
+      localStorage.setItem('rooms', '')
+    }
+  </script>
 </body>
 
 </html>
