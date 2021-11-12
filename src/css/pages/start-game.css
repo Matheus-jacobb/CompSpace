@@ -53,23 +53,38 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
+  height: 0rem;
 }
 
-.btn--container{
+.input--username{
+  height: 3rem;
+  width: 10rem;
+  margin-bottom: 15px;
+}
+
+.play--container{
   position: relative;
   width: 10rem;
-  height: 3rem;
 }
 
-.btn--play{
-  position: absolute;
+.btn--play {
   height: 3rem;
   width: 10rem;
+}
+
+.btn-rooms {
+  height: 2rem;
+  flex: 1;
+}
+
+.btn-primary {
+  text-align: center;
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
   transition: 0.5s box-shadow, 0.2s font-size;;
   /*cursor: var(--cursor-pointer), pointer;*/
   font-size: 0.8rem;
-
   border: 2px solid var(--color-blue);
   box-shadow: 0 0 .1rem #fff,
   0 0 .1rem #fff,
@@ -83,7 +98,7 @@ footer{
   z-index: 1;
 }
 
-.btn--play:hover{
+.btn-primary:hover{
   transition: 0.5s box-shadow, 0.2s font-size;
   /* background-color: var(--color-blue); */
   border: 2px solid var(--color-purple);
@@ -101,11 +116,50 @@ footer{
   height: 2.8rem;
   width: 9.8rem;
 }
+.game{
+  position: relative;
+}
+
+.rooms--party{
+  z-index: 1;
+  position: absolute;
+  height: calc(6rem + 15px);
+  width: 15rem;
+  bottom: 0;
+  overflow: auto;
+  padding: 0 10px;
+  display: flex;
+
+  border: 2px solid var(--color-blue);
+  box-shadow: 0 0 .1rem #fff,
+  0 0 .1rem #fff,
+  0 0 1rem var(--color-purple),
+  0 0 0.7rem var(--color-purple),
+  0 0 1rem var(--color-purple),
+  inset 0 0 0.5rem var(--color-purple); 
+  background:#141e2c;
+  border-radius: 10px;
+  color: var(--color-purple-light);
+}
+
+.rooms--party li {
+  margin-bottom: 10px;
+}
+
+.rooms--party li:hover {
+  box-shadow: 0 0 .1rem #fff,
+  0 0 .1rem #fff,
+  0 0 1rem var(--color-purple),
+  0 0 0.7rem var(--color-purple),
+  0 0 1rem var(--color-purple),
+  inset 0 0 0.5rem var(--color-purple); 
+  cursor: pointer;
+}
 
 #welcome{
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 40%;
 }
 
 #welcome p{
@@ -123,7 +177,7 @@ footer{
 #spaceship{
   position: absolute;
   transform: rotate(90deg);
-  top: 50%;
+  top: 40%;
   left: 45%;
   height: 15rem;
   animation: flying 5s;
@@ -156,6 +210,7 @@ footer{
 
 @media screen and (max-width:800px){
   #spaceship{
+    height: 10rem;
     top: 15%;
   }
 }
