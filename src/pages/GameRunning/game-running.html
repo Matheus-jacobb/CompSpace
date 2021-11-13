@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,12 @@
   <link rel="stylesheet" href="../../css/pages/game-running.css">
   <link rel="stylesheet" href="../../css/variables.css">
   <link rel="stylesheet" href="../../css/parallax.css">
-  
+
   <script defer src="../../scripts/functions/game-running.js"></script>
   <link rel="icon" href="../../assets/img/rocket.gif">
   <title>CompSpace | Running Game</title>
 </head>
+
 <body>
   <div class="game" id="game">
     <div class="game--title">
@@ -26,14 +28,27 @@
       <div class="btn--container">
         <nav>
           <a href="/StartGame"><img id="home-page-icon" src="../../assets/img/home-button.png" alt=""></a>
+          <p id="room-id">nave</p>
         </nav>
         <canvas id="spShip" width="2048" height="1024"></canvas>
-        <div class = "player-points" id="score">
+        <div class="player-points" id="score">
           <p id="score">0</p>
         </div>
       </div>
     </footer>
   </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    document.getElementById('room-id').innerHTML = 'nome-sala';
+    
+    var room = window.location.href.split('/')[4];
+
+    socket.on('ready', function () {
+      socket.emit('join', room)
+    });
+  </script>
 </body>
 
 <!--Modal-->
@@ -42,11 +57,11 @@
     <strong id="finalScore"></strong>
   </div>
   <div class="modal--confirmation">
-    <div>  
+    <div>
       <button>
         <p id="modalButton" onclick="window.location.reload()">Continuar</p>
       </button>
-    </div>  
+    </div>
     <div>
       <button id="finalButton">
         <p id="scoreVencedor">Score Vencedor</p>
@@ -54,4 +69,5 @@
     </div>
   </div>
 </div>
+
 </html>

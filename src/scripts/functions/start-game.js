@@ -18,5 +18,5 @@ function playGame(){
     {opacity: '0'},
   ],1500);
 
-  setTimeout(()=>window.location.href = "../GameRunning/game-running.html",1200)
+  setTimeout(()=>window.location.href = "/GameRunning",1200)
 }

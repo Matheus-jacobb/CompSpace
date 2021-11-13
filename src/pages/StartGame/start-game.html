@@ -32,31 +32,43 @@
       </div>
       <img id="spaceship" src="../../assets/img/rocket.gif" alt="">
     </div>
-    <div class="rooms--party">
-      <ul id="lista"></ul>
-      <input type="button" class="btn-rooms btn-primary" onclick="showRooms()" value="Salas">
-      <input type="button" class="btn-rooms btn-primary" onclick="clearRooms()" value="Apagar">
-    </div>
     <footer>
-      <div class="play--container">
-        <form id="form" action="">
+      <div class="online--rooms--container">
+        <p>Entrar</p>
+        <div class="rooms--party">
+          <ul id="listRooms"></ul>
+        </div>
+        <!-- <input type="button" class="btn-rooms btn-primary" onclick="showRooms()" value="Atualizar"> -->
+      </div>
+      <form id="form" action="">
+        <div class="play--container">
+          <p>Criar</p>
           <input type="text" id="username-input" class="input--username btn-primary" placeholder="Nome"
             autocomplete="off" maxlength="10">
           <button class="btn--play btn-primary">
             Jogar
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </footer>
   </div>
   <!-- Alterar para arquivo separado -->
   <script src="/socket.io/socket.io.js"></script>
   <script>
     var socket = io();
-
     var form = document.getElementById('form');
     var input = document.getElementById('username-input');
     var username;
+
+    socket.on('new room', (data) => {
+      let listRooms = document.getElementById('listRooms');
+      let items = document.createElement('li');
+      let link = document.createElement('a');
+      link.setAttribute('href', "/GameRunning/" + data);
+      link.appendChild(document.createTextNode(data));
+      items.appendChild(link);
+      listRooms.append(items);
+    })
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -64,35 +76,35 @@
         username = input.value;
         input.value = '';
       } else {
-        username = `convidado_${Math.random().toString(36).substr(2, 9)}`;
+        username = `Nave_${Math.random().toString(36).substr(2, 5)}`;
       }
-      socket.emit('create room', username);
-      if (localStorage.getItem('rooms')) {
-        let rooms = []
-        rooms.push(localStorage.getItem('rooms'));
-        rooms.push(username);
-        localStorage.setItem('rooms', rooms);
-      }else{
-        localStorage.setItem('rooms', username);
-      }
-      window.location.href = '/GameRunning'
+      socket.emit('join', username);
     });
 
-    function showRooms() {
-      let rooms = []
-      rooms.push(localStorage.getItem('rooms'));
-      let roomsList = rooms[0].split(',');
-      let lista = document.getElementById('lista');
-      for (var i = 0; i < roomsList.length; i++) {
-        let item = document.createElement('li');
-        item.appendChild(document.createTextNode(roomsList[i]));
-        lista.appendChild(item);
-      }
-    }
 
-    function clearRooms(){
-      localStorage.setItem('rooms', '')
-    }
+    socket.on('rooms', function (data) {
+      let listRooms = document.getElementById('listRooms');
+      // var ks = Object.keys(data);
+      var len = data.length;
+
+      //Limpa a lista
+      listRooms.innerHTML = '';
+
+      for (var i = 0; i < len; i++) {
+        let items = document.createElement('li');
+        let link = document.createElement('a');
+
+        var rlink = data[i].split("/")[0];
+        console.log(rlink);
+        link.setAttribute('href', "/GameRunning/" + rlink);
+        link.appendChild(document.createTextNode(data[i]));
+        items.appendChild(link);
+        listRooms.append(items);
+      };
+    });
+
+
+
   </script>
 </body>
 
