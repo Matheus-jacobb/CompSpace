@@ -9,7 +9,7 @@ body{
 }
 
 .content{
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 18rem);
   width: 100%;
   z-index: 0;
 }
@@ -52,34 +52,45 @@ body{
 footer{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 0rem;
+  align-items: flex-start;
+}
+
+footer p{
+  color: var(--color-purple-light);
+}
+
+.online--rooms--container{
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 5px;
 }
 
 .input--username{
   height: 3rem;
   width: 10rem;
-  margin-bottom: 15px;
+  margin-bottom: 19px;
 }
 
 .play--container{
-  position: relative;
   width: 10rem;
+  margin: 0 5px;
+  text-align: center;
 }
 
-.btn--play {
+.btn--play{
   height: 3rem;
   width: 10rem;
 }
 
-.btn-rooms {
-  height: 2rem;
-  flex: 1;
+.btn-rooms{
+  height: 3rem;
+  margin-top: 10px;
 }
 
-.btn-primary {
+.btn-primary{
   text-align: center;
-  position: relative;
   outline: none;
   box-sizing: border-box;
   transition: 0.5s box-shadow, 0.2s font-size;;
@@ -121,14 +132,10 @@ footer{
 }
 
 .rooms--party{
-  z-index: 1;
-  position: absolute;
   height: calc(6rem + 15px);
-  width: 15rem;
   bottom: 0;
   overflow: auto;
   padding: 0 10px;
-  display: flex;
 
   border: 2px solid var(--color-blue);
   box-shadow: 0 0 .1rem #fff,
@@ -146,6 +153,11 @@ footer{
   margin-bottom: 10px;
 }
 
+#listRooms a{
+  text-decoration: none;
+  color: var(--color-purple-light);
+}
+
 .rooms--party li:hover {
   box-shadow: 0 0 .1rem #fff,
   0 0 .1rem #fff,
@@ -159,7 +171,7 @@ footer{
 #welcome{
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 30%;
 }
 
 #welcome p{
@@ -177,8 +189,8 @@ footer{
 #spaceship{
   position: absolute;
   transform: rotate(90deg);
-  top: 40%;
-  left: 45%;
+  top: 30%;
+  left: 15%;
   height: 15rem;
   animation: flying 5s;
 }
@@ -209,15 +221,28 @@ footer{
 }
 
 @media screen and (max-width:800px){
-  #spaceship{
-    height: 10rem;
-    top: 15%;
+  .play--container{
+    margin-right: 20px;
+  }
+  .online--rooms--container{
+    width: 50%;
+    margin-left: 20px;
   }
 }
 
-@media screen and (max-width:420px){
+@media screen and (max-width:700px){
+  #spaceship{
+    height: 8rem;
+    top: 50%;
+  }
+}
+
+@media screen and (max-width:467px){
   #welcome p{
     font-size: 0.5em;
     margin: 0 20px 0 20px;
+  }
+  .online--rooms--container{
+    position: relative;
   }
 }
