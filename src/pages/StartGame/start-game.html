@@ -38,7 +38,6 @@
         <div class="rooms--party">
           <ul id="listRooms"></ul>
         </div>
-        <!-- <input type="button" class="btn-rooms btn-primary" onclick="showRooms()" value="Atualizar"> -->
       </div>
       <form id="form" action="">
         <div class="play--container">
@@ -46,6 +45,7 @@
           <input type="text" id="username-input" class="input--username btn-primary" placeholder="Nome"
             autocomplete="off" maxlength="10">
           <button class="btn--play btn-primary" onclick="playGame()">
+          <!-- <button class="btn--play btn-primary"> -->
             Jogar
           </button>
         </div>
@@ -76,15 +76,17 @@
         username = input.value;
         input.value = '';
       } else {
-        username = `Nave_${Math.random().toString(36).substr(2, 5)}`;
+        username = `Nave_${Math.random().toString(36).substr(2, 10)}`;
       }
-      socket.emit('join', username);
+      socket.emit('play game', username);
+      socket.on('redirect', function (destination) {
+        setTimeout(() => window.location.href = destination, 1200)
+      });
     });
 
 
     socket.on('rooms', function (data) {
       let listRooms = document.getElementById('listRooms');
-      // var ks = Object.keys(data);
       var len = data.length;
 
       //Limpa a lista

@@ -23,33 +23,39 @@ app.get('/GameRunning', (req, res) => {
 
 io.on('connection', (socket) => {
 
+    var rooms = []
+
     socket.emit('ready');
 
     socket.emit('rooms', getActiveRooms(io));
 
+    socket.on('play game', (room) => {
+        var destination = '/GameRunning/' + room;
+
+        app.get(destination, (req, res) => {
+            res.sendFile(__dirname + '/src/pages/GameRunning/game-running.html');
+        });
+
+        socket.emit('redirect', destination);
+    });
+
     socket.on('join', (room) => {
         socket.join(room);
-
+        // conta usuarios em uma sala
+        // console.log(io.sockets.adapter.rooms.get(room).size);
         socket.broadcast.emit('new room', room);
     });
 
-    socket.leave(socket.id); //sair da sala padrao
-    console.log('a user connected');
+    // socket.leave(socket.id); //sair da sala padrao
 
     socket.on('disconnect', () => {
-
-        var rooms = socket.rooms;
-        console.log(rooms);
         // Sai de todas as salas que esta conectado
-        for (var room in rooms) {
+        for (var room in Array.from(rooms)) {
             socket.leave(room);
-
-            socket.get('username', function (err, username) {
-                if (username) {
-                    socket.broadcast.to(room).emit('Deixou o jogo', { name: username });
-                }
-            });
         }
+        // setTimeout(function () {
+        socket.broadcast.emit('rooms', getActiveRooms(io));
+        // }, 1000);
     });
 });
 
