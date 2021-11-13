@@ -23,9 +23,17 @@ body{
     align-items: baseline;
 }
 
+#home-page-icon{
+    height: 1.5rem;
+}
+
 .btn--container nav{
     z-index: 1;
-    height: 5%;
+    height: 2rem;
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn--container nav a:hover{
@@ -38,11 +46,6 @@ body{
     0 0 10px var(--color-purple),
     0 0 12px var(--color-purple),
     0 0 15px var(--color-purple)
-}
-
-#home-page-icon{
-    margin-top: 20%;
-    height: 80%;
 }
 
 .player-points{
