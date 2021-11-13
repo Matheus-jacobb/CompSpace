@@ -192,7 +192,7 @@ footer p{
   top: 30%;
   left: 15%;
   height: 15rem;
-  animation: flying 5s;
+  animation: flying 5s, fadein 5s;
 }
 
 

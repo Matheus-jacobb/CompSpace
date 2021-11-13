@@ -30,10 +30,11 @@ body{
 .btn--container nav{
     z-index: 1;
     height: 2rem;
-    width: 12rem;
+    width: 20rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--color-purple-light);
 }
 
 .btn--container nav a:hover{
