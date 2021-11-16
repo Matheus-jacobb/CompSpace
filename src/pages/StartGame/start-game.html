@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -45,7 +45,7 @@
           <input type="text" id="username-input" class="input--username btn-primary" placeholder="Nome"
             autocomplete="off" maxlength="10">
           <button class="btn--play btn-primary" onclick="playGame()">
-          <!-- <button class="btn--play btn-primary"> -->
+            <!-- <button class="btn--play btn-primary"> -->
             Jogar
           </button>
         </div>
@@ -56,6 +56,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     var socket = io();
+    console.log(socket);
     var form = document.getElementById('form');
     var input = document.getElementById('username-input');
     var username;
@@ -84,7 +85,6 @@
       });
     });
 
-
     socket.on('rooms', function (data) {
       let listRooms = document.getElementById('listRooms');
       var len = data.length;
@@ -104,8 +104,6 @@
         listRooms.append(items);
       };
     });
-
-
 
   </script>
 </body>

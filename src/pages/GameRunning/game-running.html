@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -17,6 +17,9 @@
 
 <body>
   <div class="game" id="game">
+    <button id="btn-joystick">
+      <img id="img--joystick" src="/src/assets/img/joystick.png" alt="Joystick">
+    </button>
     <div class="game--title">
     </div>
     <div class="content">
@@ -38,19 +41,6 @@
     </footer>
   </div>
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    
-    var socket = io();
-    
-    var room = window.location.href.split('/')[4];
-
-    document.getElementById('room-id').innerHTML = room;
-
-    socket.on('ready', function () {
-      socket.emit('join', room)
-    });
-
-  </script>
 </body>
 
 <!--Modal-->

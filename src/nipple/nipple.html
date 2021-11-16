@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
+    <style>
+        html,
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        #zone_joystick {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(17, 0, 255, 0.159);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="zone_joystick"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/node_modules/nipplejs/dist/nipplejs.js"></script>
+    <script>
+        var socket = io();
+
+        var clientId = window.location.href.split('/')[4];
+
+        var joystick = nipplejs.create({
+            zone: document.getElementById('zone_joystick'),
+            mode: 'static',
+            position: { left: '50%', top: '50%' },
+            color: 'purple',
+            size: 200,
+            lockY: true
+        });
+
+        joystick.on('move', (evt, nipple) => {
+            if (nipple.direction)
+                socket.emit('joystick move', { direction: nipple.direction.angle, id: clientId })
+        });
+    </script>
+</body>
+
+</html>

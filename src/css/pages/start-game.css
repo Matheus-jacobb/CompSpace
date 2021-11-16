@@ -195,7 +195,6 @@ footer p{
   animation: flying 5s, fadein 5s;
 }
 
-
 /* animation */
 @keyframes zoom-out{
   0%{

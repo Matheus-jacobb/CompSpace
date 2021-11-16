@@ -108,7 +108,7 @@ document.addEventListener('keyup', stop);
  */
 let game = setInterval(startGame, 50);
 let move1 = setTimeout(setInterval(moveObstacles, 50), 3000);
-var score = new scoreCounter(function () { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
+let score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
 
 //End Region
 
@@ -122,33 +122,6 @@ function showModal() {
     modal.style.transition = '0.5s'
     modal.style.transform = 'scale(1)';
     gameCanvas.style.filter = 'blur(1.2px)';
-}
-
-/**
- * funciona com um setInterval com função de pausar/resumir
- * @param {*} callback 
- * @param {*} delay intervalo a cada execução
- */
-function scoreCounter(callback, delay) {
-    var timerId, start, remaining = delay;
-
-    this.pause = function () {
-        window.clearTimeout(timerId);
-        remaining -= new Date() - start;
-    };
-
-    var resume = function () {
-        start = new Date();
-        timerId = window.setTimeout(function () {
-            remaining = delay;
-            resume();
-            callback();
-        }, remaining);
-    };
-
-    this.resume = resume;
-
-    this.resume();
 }
 
 /**
@@ -221,6 +194,7 @@ function startGame() {
     for (i = 1; i < spShip.length; i++) {
         if (spShip[0].x == spShip[i].x && spShip[0].y == spShip[i].y) {
             clearInterval(game);
+            clearInterval(score);
             alert('Game Over !');
         }
     }
@@ -244,7 +218,8 @@ function startGame() {
     for (i = 0; i < obstacle.length; i++) {
         if ((spShipX >= obstacle[i].x - margin && spShipX <= obstacle[i].x + margin) && (spShipY >= obstacle[i].y - margin && spShipY <= obstacle[i].y + margin)) {
             clearInterval(game);
-            score.pause()
+            clearInterval(score);
+            // score.pause()
             running = false;
             finalScore.innerHTML = `${pontos}`;
             continua.innerHTML = `<p id="scoreVencedor" onclick = "window.location.href = '../third-page/third-page.html?score=${pontos}'">Score Vencedor</p>`
@@ -260,15 +235,34 @@ function startGame() {
     spShip.unshift(newHead);
 }
 
-/**
- * detectar se jogador saiu da página do jogo no navegador
- */
-document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState == "visible" && running) {
-        score.resume();
-    } else {
-        score.pause();
-    }
+//#Region socket.io
+
+var socket = io();
+
+console.log(socket);
+
+var room = window.location.href.split('/')[4];
+
+document.getElementById('room-id').innerHTML = room;
+
+socket.on('ready', function () {
+    socket.emit('join', room)
+});
+
+socket.on('joystick move client', (data) => {
+    direction = data;
 })
 
-//End Region
+var btnController = document.getElementById('btn-joystick');
+btnController.onclick = function () {
+    socket.emit('open controller');
+    socket.on('redirect', function (destination) {
+        window.open(
+            destination,
+            '_blank'
+        );
+    });
+}
+
+
+//

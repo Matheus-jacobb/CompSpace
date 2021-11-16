@@ -49,6 +49,40 @@ body{
     0 0 15px var(--color-purple)
 }
 
+#btn-joystick{
+    z-index: 1;
+    right: 0;
+    position: absolute;
+    height: 4.5rem;
+    cursor: pointer;
+    border: 2px solid var(--color-blue);
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem var(--color-purple),
+    0 0 0.7rem var(--color-purple),
+    0 0 1rem var(--color-purple),
+    inset 0 0 0.5rem var(--color-purple); 
+    background:#141e2c;
+    border-radius: 10px;
+}
+  
+#btn-joystick:hover{
+    transition: 0.5s box-shadow, 0.2s font-size;
+    /* background-color: var(--color-blue); */
+    border: 2px solid var(--color-purple);
+    font-size: 0.9rem;
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem var(--color-blue),
+    0 0 0.7rem var(--color-blue),
+    0 0 1rem var(--color-blue),
+    inset 0 0 0.5rem var(--color-blue); 
+}
+  
+#img--joystick{
+    height: 4rem;
+}
+
 .player-points{
     position:absolute;
     bottom:0;

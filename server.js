@@ -21,6 +21,10 @@ app.get('/GameRunning', (req, res) => {
     res.sendFile(__dirname + '/src/pages/GameRunning/game-running.html');
 });
 
+app.get('/Controller', (req, res) => {
+    res.sendFile(__dirname + '/src/nipple/nipple.html');
+});
+
 io.on('connection', (socket) => {
 
     var rooms = []
@@ -28,6 +32,19 @@ io.on('connection', (socket) => {
     socket.emit('ready');
 
     socket.emit('rooms', getActiveRooms(io));
+
+    socket.on('open controller', () => {
+        var destination = '/Controller/' + socket.id;
+
+        app.get(destination, (req, res) => {
+            res.sendFile(__dirname + '/src/nipple/nipple.html');
+        });
+        socket.emit('redirect', destination);
+    })
+
+    socket.on('joystick move', (data) => {
+        socket.broadcast.to(data.id).emit('joystick move client', data.direction)
+    });
 
     socket.on('play game', (room) => {
         var destination = '/GameRunning/' + room;
@@ -45,8 +62,6 @@ io.on('connection', (socket) => {
         // console.log(io.sockets.adapter.rooms.get(room).size);
         socket.broadcast.emit('new room', room);
     });
-
-    // socket.leave(socket.id); //sair da sala padrao
 
     socket.on('disconnect', () => {
         // Sai de todas as salas que esta conectado
