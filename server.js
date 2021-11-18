@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`http://localhost:/${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
 
 function getActiveRooms(io) {
