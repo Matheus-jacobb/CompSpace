@@ -106,44 +106,7 @@ canvas{
 }
 
 /* modal */
-#modal{
-    position: absolute;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#modal--lobby{position: absolute;display:flex;flex-direction:column;justify-content:space-around;align-items:center;height:25rem;width:40rem;top:0;left:0;right:0;bottom:0;margin:auto;text-align:center;color:#fff;background-color:#000;box-shadow:0 0 5px 5px #000}.modal--lobby--title{font-size:1rem}.players--connected img{height:4rem}.rocket--player2{filter:contrast(0)}.modal--lobby-body{width:65%;font-size:.8rem;line-height:2rem}.btn-primary{height:3rem;width:10rem;text-align:center;outline:0;box-sizing:border-box;transition:.5s box-shadow,.2s font-size;font-size:.8rem;border:2px solid var(--color-blue);box-shadow:0 0 .1rem #fff,0 0 .1rem #fff,0 0 1rem var(--color-purple),0 0 .7rem var(--color-purple),0 0 1rem var(--color-purple),inset 0 0 .5rem var(--color-purple);background:#141e2c;border-radius:10px;color:var(--color-purple-light);z-index:1}.btn-primary:hover{transition:.5s box-shadow,.2s font-size;border:2px solid var(--color-purple);font-size:.9rem;box-shadow:0 0 .1rem #fff,0 0 .1rem #fff,0 0 1rem var(--color-blue),0 0 .7rem var(--color-blue),0 0 1rem var(--color-blue),inset 0 0 .5rem var(--color-blue)}.btn-primary:disabled{height:3rem;width:10rem;text-align:center;outline:0;box-sizing:border-box;transition:.5s box-shadow,.2s font-size;font-size:.8rem;border:2px solid #313131;box-shadow:0 0 .1rem #fff,0 0 .1rem #fff,0 0 1rem #727272,0 0 .7rem #727272,0 0 1rem #727272,inset 0 0 .5rem #727272;background:#141e2c;border-radius:10px;color:#8a8a8a;z-index:1}@media screen and (max-width:700px){#modal--lobby{width:20rem}.players--connected img{height:2.5rem}.modal--lobby-body{width:65%;font-size:.5rem;line-height:1.5rem}.modal--lobby--title{font-size:.6rem}.btn-primary{font-size:.5rem;height:2rem;width:5rem}.btn-primary:disabled{font-size:.5rem;height:2rem;width:5rem}}
 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-
-    height: 10rem;
-    width: 10rem;
-
-    background-color: black;
-    box-shadow: 0px 0px 5px 5px black;
-}
-
-.modal--confirmation{
-    width: 100%;
-}
-
-.modal--confirmation button{
-    height: 1.5rem;
-    width: 6rem;
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: darkgrey;
-    border-radius: 5px;
-    border: none;
-}
-
-#modalButton{
-    font-size: x-small;
-}
+#modal{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;top:0;left:0;right:0;bottom:0;margin:auto;height:10rem;width:10rem;background-color:#000;box-shadow:0 0 5px 5px #000}.modal--confirmation{width:100%}.modal--confirmation button{height:1.5rem;width:6rem;position:absolute;bottom:1rem;left:0;right:0;margin:auto;background-color:#a9a9a9;border-radius:5px;border:none}#modalButton{font-size:x-small}

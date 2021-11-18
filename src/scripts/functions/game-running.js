@@ -106,6 +106,12 @@ document.addEventListener('keyup', stop);
 /**
  * Funções para iniciar o jogo
  */
+
+// desenvolver lógica de inicio de jogo
+function DefinitiveStartGame(){
+    document.getElementById('modal--lobby').style.transform = 'scale(0)';
+}
+
 let game = setInterval(startGame, 50);
 let move1 = setTimeout(setInterval(moveObstacles, 50), 3000);
 let score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
