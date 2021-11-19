@@ -77,9 +77,9 @@
         username = input.value;
         input.value = '';
       } else {
-        username = `Nave_${Math.random().toString(36).substr(2, 10)}`;
+        username = `NAVE_${Math.random().toString(36).substr(2, 10)}`;
       }
-      socket.emit('play game', username);
+      socket.emit('play game', username.toUpperCase());
       socket.on('redirect', function (destination) {
         setTimeout(() => window.location.href = destination, 1200)
       });
