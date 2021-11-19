@@ -68,12 +68,14 @@
   </div>
   <div class="players--connected">
     <img src="../../assets/img/rocket-direita.gif" alt="player_1">
-    <img class="rocket--player2" src="../../assets/img/rocket-direita.gif" alt="player_2">
+    <img id="rocket--player2" src="../../assets/img/rocket-direita.gif" alt="player_2">
+    <img id="rocket--player3" src="../../assets/img/rocket-direita.gif" alt="player_3">
+    <img id="rocket--player4" src="../../assets/img/rocket-direita.gif" alt="player_4">
   </div>
   <div class="modal--lobby-body">
-    <p>Com os dois jogadores na sala, o jogo poderá ser iniciado.</p>
+    <p>Com pelo menos dois jogadores na sala, o jogo poderá ser iniciado.</p>
   </div>
-  <button class="btn-primary" onclick="DefinitiveStartGame()">
+  <button id="btn--startgame" class="btn-primary" onclick="DefinitiveStartGame()" disabled>
     Iniciar
   </button>
 </div>

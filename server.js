@@ -31,6 +31,12 @@ io.on('connection', (socket) => {
 
     socket.emit('ready');
 
+    socket.
+
+    socket.on('players connected', (room) => {
+        socket.emit('players count', io.sockets.adapter.rooms.get(room).size)
+    });
+
     socket.emit('rooms', getActiveRooms(io));
 
     socket.on('open controller', () => {
@@ -57,10 +63,15 @@ io.on('connection', (socket) => {
     });
 
     socket.on('join', (room) => {
-        socket.join(room);
         // conta usuarios em uma sala
-        // console.log(io.sockets.adapter.rooms.get(room).size);
-        socket.broadcast.emit('new room', room);
+        socket.join(room);
+        if (io.sockets.adapter.rooms.get(room).size > 4) {
+            socket.leave(room);
+        } else if (io.sockets.adapter.rooms.get(room).size == 1) {
+            socket.broadcast.emit('new room', room);
+        } else {
+            socket.broadcast.to(room).emit('new player', io.sockets.adapter.rooms.get(room).size);
+        }
     });
 
     socket.on('disconnect', () => {

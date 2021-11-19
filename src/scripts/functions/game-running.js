@@ -108,13 +108,14 @@ document.addEventListener('keyup', stop);
  */
 
 // desenvolver lógica de inicio de jogo
-function DefinitiveStartGame(){
+var game, move1, score
+function DefinitiveStartGame() {
     document.getElementById('modal--lobby').style.transform = 'scale(0)';
+    game = setInterval(startGame, 50);
+    move1 = setTimeout(setInterval(moveObstacles, 50), 3000);
+    score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
 }
 
-let game = setInterval(startGame, 50);
-let move1 = setTimeout(setInterval(moveObstacles, 50), 3000);
-let score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
 
 //End Region
 
@@ -253,11 +254,25 @@ document.getElementById('room-id').innerHTML = room;
 
 socket.on('ready', function () {
     socket.emit('join', room)
+    socket.emit('players connected', room);
+    socket.on('players count', (playersCount) => {
+        for (let i = 2; i <= playersCount; i++) {
+            document.getElementById(`rocket--player${i}`).style.filter = "contrast(1)";
+        }
+    })
 });
 
 socket.on('joystick move client', (data) => {
     direction = data;
 })
+
+
+socket.on('new player', (clientNumber) => {
+    if (clientNumber >= 2) {
+        document.getElementById('btn--startgame').disabled
+    }
+    document.getElementById(`rocket--player${clientNumber}`).style.filter = "contrast(1)";
+});
 
 var btnController = document.getElementById('btn-joystick');
 btnController.onclick = function () {
