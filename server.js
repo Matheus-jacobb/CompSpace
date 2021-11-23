@@ -31,8 +31,6 @@ io.on('connection', (socket) => {
 
     socket.emit('ready');
 
-    socket.
-
     socket.on('players connected', (room) => {
         socket.emit('players count', io.sockets.adapter.rooms.get(room).size)
     });
