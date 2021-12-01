@@ -4,7 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const {Server} = require("socket.io");
 const io = new Server(server);
-const PORT = 8081;
+const PORT = process.env.PORT || 8080;
 let clients = [];
 
 app.use(express.static(__dirname));
@@ -102,7 +102,7 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT,() => {
     console.log(`http://localhost:${PORT}`);
 });
 
