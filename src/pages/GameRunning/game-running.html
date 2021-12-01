@@ -46,19 +46,20 @@
 <!--Modal-->
 <div id="modal">
   <div class="modal--title">
+    <strong id="label-waiting-players">Resultados da partida</strong>
+  </div>
+  <div class="modal--score">
     <strong id="finalScore"></strong>
   </div>
-  <div class="modal--confirmation">
-    <div>
-      <button>
-        <p id="modalButton" onclick="window.location.reload()">Continuar</p>
-      </button>
-    </div>
-    <div>
-      <button id="finalButton">
-        <p id="scoreVencedor">Score Vencedor</p>
-      </button>
-    </div>
+  <div class="modal--body">
+    <!-- Mudar para 'ranking' -->
+    <strong id="label-waiting-players">Aguardando...</strong>
+    <ul id="listPlayers"></ul>
+  </div>
+  <div>
+    <button class="btn-primary" onclick="location.href = '/StartGame'">
+      Novo jogo
+    </button>
   </div>
 </div>
 

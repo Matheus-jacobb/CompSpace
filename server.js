@@ -75,6 +75,10 @@ io.on('connection', (socket) => {
         socket.broadcast.to(room).emit('start game');
     });
 
+    socket.on('player died', (client) => {
+        socket.to(client.room).emit('dead players', {id: client.id, score: client.score});
+    })
+
     socket.on('disconnect', () => {
         // Sai de todas as salas que esta conectado
         for (var room in Array.from(rooms)) {

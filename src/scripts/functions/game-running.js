@@ -18,8 +18,6 @@ var isGameRunning = false;
  */
 let finalScore = document.getElementById("finalScore");
 
-let continua = document.getElementById("finalButton")
-
 /**
  * A modal de pontos
  */
@@ -76,6 +74,11 @@ spShip[0] = {
  * Direcao do jogo
  */
 let direction = "right";
+
+/**
+ * Jogadores derrotados
+ */
+let defeatedPlayers = [];
 
 // End Region
 
@@ -224,9 +227,9 @@ function startGame() {
             clearInterval(score);
             clearInterval(move);
             isGameRunning = false;
+            socket.emit('player died', { id: socket.id, score: pontos, room: room });
             // score.pause()
             finalScore.innerHTML = `${pontos}`;
-            continua.innerHTML = `<p id="scoreVencedor" onclick = "window.location.href = '../third-page/third-page.html?score=${pontos}'">Score Vencedor</p>`
             showModal();
         }
     }
@@ -275,6 +278,10 @@ socket.on('new player', (playersCount) => {
     document.getElementById(`rocket--player${playersCount}`).style.filter = "contrast(1)";
 });
 
+socket.on('dead players', (client) => {
+    defeatedPlayers.push(client);
+})
+
 socket.on('player disconnect', (playersCount) => {
     for (let i = 2; i <= playersCount; i++) {
         document.getElementById(`rocket--player${i}`).style.filter = "contrast(0)";
@@ -292,5 +299,12 @@ btnController.onclick = function () {
     });
 }
 
+let listPlayers = document.getElementById('listPlayers');
+
+for (var i = 0; i < 4; i++) {
+    let items = document.createElement('li');
+    items.appendChild(document.createTextNode(`${i + 1}. Jogador ${i}`));
+    listPlayers.append(items);
+};
 
 //#endregion
