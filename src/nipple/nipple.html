@@ -2,54 +2,70 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Controller</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
-    <style>
-        html,
-        body {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 0;
-            margin: 0;
-        }
+  <meta charset="utf-8">
+  <title>Controller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5">
+  <style>
+    html,
+    body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+    }
 
-        #zone_joystick {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(17, 0, 255, 0.159);
-        }
-    </style>
+    #zone_joystick {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(17, 0, 255, 0.159);
+    }
+
+    #qrcode {
+      background-color: white;
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      #qrcode {
+        display: none
+      }
+
+    }
+  </style>
 </head>
 
 <body>
-    <div id="zone_joystick"></div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/node_modules/nipplejs/dist/nipplejs.js"></script>
-    <script>
-        var socket = io();
+<div id="qrcode"></div>
+<div id="zone_joystick"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/node_modules/nipplejs/dist/nipplejs.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script>
+    var socket = io();
 
-        var clientId = window.location.href.split('/')[4];
+    var clientId = window.location.href.split('/')[4];
 
-        var joystick = nipplejs.create({
-            zone: document.getElementById('zone_joystick'),
-            mode: 'static',
-            position: { left: '50%', top: '50%' },
-            color: 'purple',
-            size: 200,
-            lockY: true
-        });
+    var joystick = nipplejs.create({
+        zone: document.getElementById('zone_joystick'),
+        mode: 'static',
+        position: {left: '50%', top: '50%'},
+        color: 'purple',
+        size: 200,
+        lockY: true
+    });
 
-        joystick.on('move', (evt, nipple) => {
-            if (nipple.direction)
-                socket.emit('joystick move', { direction: nipple.direction.angle, id: clientId })
-        });
-    </script>
+    joystick.on('move', (evt, nipple) => {
+        if (nipple.direction)
+            socket.emit('joystick move', {direction: nipple.direction.angle, id: clientId})
+    });
+    
+    new QRCode(document.getElementById("qrcode"), document.URL);
+</script>
 </body>
 
 </html>
