@@ -60,8 +60,10 @@ npm install
 node server.js
 ```
 
-And it's working on your machine!🚀🚀
-
+Use the returned  url by the console on a browser to get access to the game in your machine!🚀🚀
+```
+The url will look like http://localhost:8080
+```
 <br>
 
 ---
