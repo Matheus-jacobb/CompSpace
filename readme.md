@@ -48,7 +48,7 @@ First you need to clone the repository on your machine using the command below i
 
 ### **Step 2**
 
-After cloning/downloading the project, just open the folder and run the following commands in cmd/terminal:
+After cloning/downloading the project, using your terminal , just open the folder and run the following commands:
 
 ### Project setup
 ```
