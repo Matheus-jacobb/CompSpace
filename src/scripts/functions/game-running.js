@@ -8,11 +8,10 @@ let gameCanvas = document.getElementById("game");
 let context = canvas.getContext("2d");
 let box = 64;
 
-
 /**
  * Corresponde a staus do game
  */
-let running = false
+var isGameRunning = false;
 
 /**
  * Salva o último score para ser apresentado
@@ -108,12 +107,16 @@ document.addEventListener('keyup', stop);
  */
 
 // desenvolver lógica de inicio de jogo
-var game, move1, score
+var game, move, score
 function DefinitiveStartGame() {
-    document.getElementById('modal--lobby').style.transform = 'scale(0)';
-    game = setInterval(startGame, 50);
-    move1 = setTimeout(setInterval(moveObstacles, 50), 3000);
-    score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
+    if (!isGameRunning) {
+        socket.emit('start game button', room);
+        isGameRunning = true;
+        document.getElementById('modal--lobby').style.transform = 'scale(0)';
+        game = setInterval(startGame, 50);
+        move = setInterval(moveObstacles, 50);
+        score = setInterval(() => { pontos++; document.getElementById("score").innerHTML = `${pontos}`; }, 1000);
+    }
 }
 
 
@@ -194,27 +197,20 @@ function stop(event) {
  * Realiza o inicio do jogo
  */
 function startGame() {
-    running = true;
+    // isGameRunning = true;
     if (spShip[0].y == 15 * box) spShip[0].y = 14 * box;
     if (spShip[0].y == 0) spShip[0].y = 1 * box;
 
-    for (i = 1; i < spShip.length; i++) {
-        if (spShip[0].x == spShip[i].x && spShip[0].y == spShip[i].y) {
-            clearInterval(game);
-            clearInterval(score);
-            alert('Game Over !');
-        }
-    }
     createspShip();
     drawObstacles();
 
-    //inicializar cobrinha em 0x0
+    //inicializar nave em 0x0
     let spShipX = spShip[0].x;
     let spShipY = spShip[0].y;
 
     const margin = 40;
 
-    //andar com a cobrinha (box = pixel)
+    //andar com a nave (box = pixel)
     if (direction == "down") spShipY += 32;
     if (direction == "up") spShipY -= 32;
 
@@ -226,8 +222,9 @@ function startGame() {
         if ((spShipX >= obstacle[i].x - margin && spShipX <= obstacle[i].x + margin) && (spShipY >= obstacle[i].y - margin && spShipY <= obstacle[i].y + margin)) {
             clearInterval(game);
             clearInterval(score);
+            clearInterval(move);
+            isGameRunning = false;
             // score.pause()
-            running = false;
             finalScore.innerHTML = `${pontos}`;
             continua.innerHTML = `<p id="scoreVencedor" onclick = "window.location.href = '../third-page/third-page.html?score=${pontos}'">Score Vencedor</p>`
             showModal();
@@ -242,12 +239,13 @@ function startGame() {
     spShip.unshift(newHead);
 }
 
-//#Region socket.io
+//#region socket.io
 
 var socket = io();
 
 console.log(socket);
 
+var btnPlayGame = document.getElementById('btn--startgame');
 var room = window.location.href.split('/')[4];
 
 document.getElementById('room-id').innerHTML = room;
@@ -262,16 +260,25 @@ socket.on('ready', function () {
     })
 });
 
+socket.on('start game', () => {
+    btnPlayGame.click();
+});
+
 socket.on('joystick move client', (data) => {
     direction = data;
 })
 
-
-socket.on('new player', (clientNumber) => {
-    if (clientNumber >= 2) {
-        document.getElementById('btn--startgame').disabled
+socket.on('new player', (playersCount) => {
+    if (playersCount >= 2) {
+        document.getElementById('btn--startgame').disabled = false;
     }
-    document.getElementById(`rocket--player${clientNumber}`).style.filter = "contrast(1)";
+    document.getElementById(`rocket--player${playersCount}`).style.filter = "contrast(1)";
+});
+
+socket.on('player disconnect', (playersCount) => {
+    for (let i = 2; i <= playersCount; i++) {
+        document.getElementById(`rocket--player${i}`).style.filter = "contrast(0)";
+    }
 });
 
 var btnController = document.getElementById('btn-joystick');
@@ -286,4 +293,4 @@ btnController.onclick = function () {
 }
 
 
-//
+//#endregion

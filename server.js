@@ -61,7 +61,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('join', (room) => {
-        // conta usuarios em uma sala
         socket.join(room);
         if (io.sockets.adapter.rooms.get(room).size > 4) {
             socket.leave(room);
@@ -72,9 +71,14 @@ io.on('connection', (socket) => {
         }
     });
 
+    socket.on('start game button', (room) => {
+        socket.broadcast.to(room).emit('start game');
+    });
+
     socket.on('disconnect', () => {
         // Sai de todas as salas que esta conectado
         for (var room in Array.from(rooms)) {
+            socket.broadcast.to(room).emit('player disconnect', io.sockets.adapter.rooms.get(room).size);
             socket.leave(room);
         }
         // setTimeout(function () {
