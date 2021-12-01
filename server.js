@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("socket.io");
+const {Server} = require("socket.io");
 const io = new Server(server);
-const PORT = 8080;
+const PORT = 8081;
+let clients = [];
 
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/src/'));
@@ -27,7 +28,7 @@ app.get('/Controller', (req, res) => {
 
 io.on('connection', (socket) => {
 
-    var rooms = []
+    var rooms = [];
 
     socket.emit('ready');
 
@@ -76,11 +77,13 @@ io.on('connection', (socket) => {
     });
 
     socket.on('player died', (client) => {
-        socket.to(client.room).emit('dead players', {id: client.id, score: client.score});
+        let clientName = clients.filter((e) => e.clientId === client.id )[0].customId;
+        io.sockets.in(client.room).emit('dead players', {id: client.id, userName: clientName, score: client.score});
     })
 
     socket.on('disconnect', () => {
         // Sai de todas as salas que esta conectado
+        clients = clients.filter((e) => e.clientId !== socket.id);
         for (var room in Array.from(rooms)) {
             socket.broadcast.to(room).emit('player disconnect', io.sockets.adapter.rooms.get(room).size);
             socket.leave(room);
@@ -88,6 +91,14 @@ io.on('connection', (socket) => {
         // setTimeout(function () {
         socket.broadcast.emit('rooms', getActiveRooms(io));
         // }, 1000);
+    });
+
+    socket.on('storeClientInfo', function (data) {
+        let clientInfo = new Object();
+        clientInfo.customId = data;
+        clientInfo.clientId = socket.id;
+        clients.push(clientInfo);
+        console.log(clients);
     });
 });
 
