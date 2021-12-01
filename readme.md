@@ -54,7 +54,14 @@ And it's working on your machine!🚀🚀
 
 <br>
 
+## **It is also possible to test the project on heroku** 🚀
+
+-  **<h3>https://comp-space.herokuapp.com/</h3>**
+
+<br>
+
 ---
+
 ## Developed by ⚙
 
 | Author | Description |
