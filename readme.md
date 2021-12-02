@@ -54,7 +54,7 @@ After cloning/downloading the project, using your terminal , just open the folde
 ```
 npm install
 ```
-
+ 
 ### Run server that starts the site
 ```
 node server.js
