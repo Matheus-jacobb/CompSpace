@@ -1,5 +1,11 @@
 # Group CompSpace (PA VI)
 
+
+<h1  >
+    <img  src = "for_readme/gif-game.gif">
+
+</h1>
+
 ## 📃 **About**
 
 &nbsp;&nbsp;&nbsp;&nbsp;The project presented for this discipline will be based on a web application developed in **JavaScript** , **HTML** and **CSS**, and using **socket-io** for the server-client connection. The project will be a retro game in a Shoot’em up and **Fixed Shooter style**, with the controlled ship’s movement only possible in the Y axis, similar to the games of the same style on the SNES console.
