@@ -90,8 +90,3 @@ The url will look like http://localhost:8080
 <img src="https://avatars.githubusercontent.com/u/70176420?v=4" width="170"> | **Guilherme Koji Yamada (https://github.com/gkojiyamada)**<br> Developer/Student.<br> ||
 <img src="https://avatars.githubusercontent.com/u/36682861?v=4" width="170"> | **Leonardo da Costa Campagnollo (https://github.com/Leo21212)**<br> Developer/Student.<br> ||
 <img src="https://avatars.githubusercontent.com/u/52716819?v=4" width="170"> | **Lucas de Abreu Furtado Garcia (https://github.com/Jornay)**<br> Developer/Student.<br> ||
-## Professor 📖🖊
-
-|       | Description |
-| :---: | :--- |
-<img src="https://media-exp1.licdn.com/dms/image/C5603AQFzSK9NUdn5Og/profile-displayphoto-shrink_800_800/0/1610644717696?e=1639008000&v=beta&t=zELDDATphEtRbIAFjnrTBPlCdx9m2VcXd8gaRtsh7mM" width="170"> | **Marc Gonzalez Capdevila (https://www.linkedin.com/in/marcgonzalezcapdevila/)**<br> Mentor.<br> ||
