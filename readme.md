@@ -1,7 +1,7 @@
 # CompSpace
 
 <h1  >
-    <img  src = "./for_readme/gif-game.gif">
+    <img  src = "./for_readme/gif-game.gif?raw=true">
 
 </h1>
 
