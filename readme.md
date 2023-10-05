@@ -1,9 +1,6 @@
 # CompSpace
 
-<h1  >
-    <img  src = "./for_readme/gif-game.gif">
-
-</h1>
+![Screenshot](https://raw.githubusercontent.com/Jornay/CompSpace/master/for_readme/gif-game.gif)
 
 
 ## 📃 **About**
