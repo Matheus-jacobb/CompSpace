@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Matheus-jacobb/CompSpace.git"
   },
+  "engines": {
+    "node": "14.x.x"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
